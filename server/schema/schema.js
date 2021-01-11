@@ -2,23 +2,15 @@
 
 const graphql = require("graphql");
 const {
+  GraphQLSchema,
   GraphQLObjectType,
+  GraphQLList,
+  GraphQLID,
   GraphQLString,
   GraphQLInt,
-  GraphQLSchema,
-  GraphQLID,
 } = graphql;
 
 // object types =================================>
-
-const AccountType = new GraphQLObjectType({
-  name: "Account",
-  fields: () => ({
-    id: { type: GraphQLID },
-    name: { type: GraphQLString },
-    ballance: { type: GraphQLInt },
-  }),
-});
 
 const CustomerType = new GraphQLObjectType({
   name: "Customer",
@@ -28,6 +20,27 @@ const CustomerType = new GraphQLObjectType({
     last_name: { type: GraphQLString },
     username: { type: GraphQLString },
     password: { type: GraphQLString },
+    accounts: {
+      type: new GraphQLList(AccountType),
+      resolve(parent, args) {
+        // database code
+      },
+    },
+  }),
+});
+
+const AccountType = new GraphQLObjectType({
+  name: "Account",
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    ballance: { type: GraphQLInt },
+    customer: {
+      type: CustomerType,
+      resolve(parent, args) {
+        // database code
+      },
+    },
   }),
 });
 
@@ -48,6 +61,18 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         // code to get data from database
+      },
+    },
+    accounts: {
+      type: new GraphQLList(AccountType),
+      resolve(parent, args) {
+        return books;
+      },
+    },
+    customers: {
+      type: new GraphQLList(CustomerType),
+      resolve(parent, args) {
+        return customers;
       },
     },
   },
