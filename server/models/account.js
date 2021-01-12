@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const accountSchema = new Schema({
   name: String,
   ballance: Number,
-  customerId: String,
+  customer_id: String,
 });
 
 module.exports = mongoose.model("Account", accountSchema);

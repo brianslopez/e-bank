@@ -6,7 +6,6 @@ const customerSchema = new Schema({
   last_name: String,
   username: String,
   password: String,
-  customer_Id: String,
 });
 
 module.exports = mongoose.model("Customer", customerSchema);
