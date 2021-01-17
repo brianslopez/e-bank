@@ -1,5 +1,9 @@
+// requirments =================================>
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
+// model =======================================>
 
 const customerSchema = new Schema({
   first_name: String,
@@ -7,5 +11,7 @@ const customerSchema = new Schema({
   username: String,
   password: String,
 });
+
+// exports =====================================>
 
 module.exports = mongoose.model("Customer", customerSchema);

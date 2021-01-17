@@ -9,7 +9,7 @@
 - THEN I am presented with the homepage; witch includes a welcome message and navigation links for; home, sign-up, and, log-in.  
 
 - WHEN I click the sign-up link
-- THEN I am promoted to enter username and password
+- THEN I am promoted to enter first_name, last_name, username, and password
 - WHEN I click the sign-up button
 - THEN my user credentials are saved, I am logged into the site, and presented with the homepage; which includes; user’s account balance, deposit money link, withdraw money link, transfer money link, and navigation bar links for the homepage and sign-out.    
 

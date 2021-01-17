@@ -1,4 +1,4 @@
-// dependancies =================================>
+// requirments =================================>
 
 const graphql = require("graphql");
 const Account = require("../models/account");
@@ -11,9 +11,10 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLInt,
+  GraphQLNonNull
 } = graphql;
 
-// object types =================================>
+// object types ================================>
 
 const AccountType = new GraphQLObjectType({
   name: "Account",
@@ -89,10 +90,10 @@ const Mutation = new GraphQLObjectType({
     addCustomer: {
       type: CustomerType,
       args: {
-        first_name: { type: GraphQLString },
-        last_name: { type: GraphQLString },
-        username: { type: GraphQLString },
-        password: { type: GraphQLString },
+        first_name: { type: new GraphQLNonNull(GraphQLString) },
+        last_name: { type: new GraphQLNonNull(GraphQLString) },
+        username: { type: new GraphQLNonNull(GraphQLString) },
+        password: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parent, args) {
         let customer = new Customer({
@@ -107,9 +108,9 @@ const Mutation = new GraphQLObjectType({
     addAccount: {
       type: AccountType,
       args: {
-        name: { type: GraphQLString },
-        ballance: { type: GraphQLInt },
-        customer_id: { type: GraphQLID },
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        ballance: { type: new GraphQLNonNull(GraphQLInt) },
+        customer_id: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve(parent, args) {
         let account = new Account({
