@@ -21,7 +21,7 @@ const AccountType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    ballance: { type: GraphQLInt },
+    balance: { type: GraphQLInt },
     customer: {
       type: CustomerType,
       resolve(parent, args) {
@@ -109,13 +109,13 @@ const Mutation = new GraphQLObjectType({
       type: AccountType,
       args: {
         name: { type: new GraphQLNonNull(GraphQLString) },
-        ballance: { type: new GraphQLNonNull(GraphQLInt) },
+        balance: { type: new GraphQLNonNull(GraphQLInt) },
         customer_id: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve(parent, args) {
         let account = new Account({
           name: args.name,
-          ballance: args.ballance,
+          balance: args.balance,
           customer_id: args.customer_id,
         });
         return account.save();
