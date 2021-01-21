@@ -5,7 +5,10 @@
   --light: #e2e4f6;
   --dark: #0a8754;
   --darker: #111111;
+  --red: rgb(228, 46, 1);
+  --green: rgb(0,255,0);
   --error: rgb(228, 46, 1);
+  --spacing-half: calc(1rem * 0.25);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   --spacing-five: calc(2.5rem);
@@ -15,6 +18,59 @@
 * {
   box-sizing: border-box;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin: 5px 0;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.25rem;
+  color: var(--light);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-family:"Arial";
+  color: var(--secondary);
+}
+
+h3 a {
+  font-size: 1.75rem;
+  font-family:"Arial";
+  color: var(--secondary);
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-family:"Arial";
+  color: var(--tertiary);
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
 
 html {
   min-height: 100vh;
@@ -29,6 +85,7 @@ body {
   letter-spacing: .1em;
   color: var(--light);
   font-family: 'Arial';
+  background: linear-gradient(var(--primary), 70%, var(--secondary));
 }
 
 li {
@@ -40,10 +97,17 @@ li {
   min-height: 100vh;
 }
 
+.home-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
   background: var(--primary);
+  background: rgba(0,0,0,0.2);
   border-bottom: 1px solid #cccccc;
 }
 
@@ -80,8 +144,347 @@ li {
   font-family: 'Brush Script MT', cursive;
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 1 0 calc(75%);
+  margin: var(--spacing-five);
+  border: 3px solid var(--tertiary);
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--spacing-two);
+}
+
+.contact-group {
+  flex: 0 0 calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-label {
+  color: var(--secondary);
+}
+.contact-text {
+	height: 40px;
+	border: 3px solid #cccccc;
+  padding: 5px;
+  font-size: 1.25rem; 
+  font-family:"Arial";
+  color: var(--darker);
+  flex: 0 0 calc(100%);
+}
+
+.contact-larger {
+  height: 120px;
+}
+
+.contact-error {
+  flex: 0 0 calc(100%);
+}
+
+.contact-button {
+  margin-top: var(--spacing-two);
+  font-size: 1rem;
+  color: var(--darker);
+}
+
+.page-header {
+  margin-left: var(--spacing-two);
+  margin-top: var(--spacing-two);
+  color: var(--light);
+}
+
+.transactions-header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid var(--light);
+  padding: var(--spacing-two);
+}
+
+.transactions-h1 {
+  color: var(--light);
+  flex: 0 0 80%;
+}
+
+.transactions-h3 {
+  color: var(--light);
+  flex: 0 0 10%;
+}
+
+.transactions-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.transaction-deposit {
+  background-color: rgb(0,255,0);
+  flex: 0 0 calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--light);
+  padding: var(--spacing-two);
+}
+
+.transaction-withdraw {
+  background-color: rgb(228, 46, 1);
+  flex: 0 0 calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--light);
+  padding: var(--spacing-two);
+}
+
+.transaction-name {
+  color: var(--primary);
+  flex: 0 0 80%;
+}
+
+.transaction-old {
+  color: var(--secondary);
+  flex: 0 0 10%;
+}
+
+.transaction-new {
+  color: var(--tertiary);
+  flex: 0 0 10%;
+}
+
+.accounts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+}
+
+.account{
+  margin-top: var(--spacing-five);
+  background: rgba(255,255,255,0.25);
+  color: var(--primary);
+  flex: 0 0 calc(90%);
+  border: 2px solid var(--tertiary);
+  display: flex;
+  height: 225px;
+  border-radius: 15px;
+}
+
+.account-img {
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  padding: 15px;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+
+.account:hover .account-img::after {
+  opacity: 1;
+}
+
+.account-img h3 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: var(--secondary)
+}
+
+.account-img h4 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  font-size: 18px;
+  top: 200px;
+  transition: 0.3s;
+  color: var(--light)
+}
+
+.account-link {
+  position: relative;
+  top: -100px;
+  width: 100%;
+  z-index: 1;
+  font-size: 15px;
+  color: var(--darker);
+  background: linear-gradient(90deg,var(--red),60%, var(--green));
+  width: fit-content;
+  padding: var(--spacing-half);
+  border-radius: 5px;
+}
+
+.account:hover .account-img h3, .account:hover .account-img h4 {
+  top: 0px;
+}
+
+.new-account {
+  color: var(--primary);
+  border: 2px solid var(--light);
+  padding: var(--spacing-two);
+  margin-top: var(--spacing-two);
+  margin-right: var(--spacing-five);
+  background-color: var(--tertiary);
+}
+
+.detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.detail-info {
+  flex: 0 0 calc(75%);
+}
+
+.detail-withdraw {
+  color: var(--primary);
+  border: 2px solid var(--light);
+  padding: var(--spacing-two);
+  margin-top: var(--spacing-two);
+  margin-right: var(--spacing-five);
+  background-color: rgb(228, 46, 1);
+  flex: 0 0 auto;
+  height: fit-content;
+}
+
+.detail-deposit {
+  color: var(--primary);
+  border: 2px solid var(--light);
+  padding: var(--spacing-two);
+  margin-top: var(--spacing-two);
+  margin-right: var(--spacing-five);
+  background-color: rgb(0,255,0);
+  flex: 0 0 auto;
+  height: fit-content;
+}
+
+.withdraw-form {
+  flex: 1 0 calc(75%);
+  margin: var(--spacing-five);
+  border: 3px solid var(--tertiary);
+  background: var(--red);
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--spacing-two);
+  border-radius: 25px;
+}
+
+.deposit-form {
+  flex: 1 0 calc(75%);
+  margin: var(--spacing-five);
+  border: 3px solid var(--tertiary);
+  background: var(--green);
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--spacing-two);
+  border-radius: 25px;
+}
+
+.withdraw-group {
+  flex: 0 0 calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.withdraw-label {
+  color: var(--tertiary);
+}
+.withdraw-text {
+	height: 40px;
+	border: 3px solid #cccccc;
+  padding: 5px;
+  font-size: 1.25rem; 
+  font-family:"Arial";
+  color: var(--darker);
+  flex: 0 0 calc(100%);
+}
+
+.withdraw-modal {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+}
+
+.withdraw-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.account-form {
+  flex: 1 0 calc(75%);
+  margin: var(--spacing-five);
+  border: 3px solid var(--primary);
+  background: var(--tertiary);
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--spacing-two);
+  border-radius: 25px;
+}
+
+.account-group {
+  flex: 0 0 calc(100%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.account-label {
+  color: var(--primary);
+}
+.account-text {
+	height: 40px;
+	border: 3px solid #cccccc;
+  padding: 5px;
+  font-size: 1.25rem; 
+  font-family:"Arial";
+  color: var(--darker);
+  flex: 0 0 calc(100%);
+}
+
+.account-modal {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+}
+
+.account-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.modal-button {
+  margin: var(--spacing-two);
+  background-color:rgb(228, 46, 1);
+  border-radius: 7.5px;
+}
+
 .footer {
-  background: var(--primary);
+  background: var(--secondary);
   border-top: 1px solid #cccccc;
   position: absolute;
   bottom: 0;
@@ -89,6 +492,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background: rgba(0,0,0,0.2);
 }
 
 .footer-text {
@@ -148,7 +552,7 @@ li {
 
 /* col-md */
 @media screen and (min-width: 768px) {
-  .project{
+  .account{
     flex: 0 0 calc(45%);
   }
 
@@ -226,7 +630,7 @@ li {
 /* col-xl */
 @media screen and (min-width: 1200px) {
 
-  .project{
+  .account{
     flex: 0 0 calc(30%);
   }
 }
