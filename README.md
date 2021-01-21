@@ -71,11 +71,10 @@ If you wanted to clone this Web Application, you will need to follow these steps
 # Credits 
 
 # Collaborators 
-
-Name: 			    Github Page: 			        Main Responsibilities: 			
-Brian Lopez 							            Backend & Project Manager 
-Andy Tang		    https://github.com/andytang02	Frontend 
-Srikar Kudumula	 	https://github.com/Srikar2020   Authentication
+ 			
+Brian Lopez: Backend & Project Manager 
+Andy Tang: https://github.com/andytang02	Frontend 
+Srikar Kudumula: https://github.com/Srikar2020   Authentication
 
 
 # License
