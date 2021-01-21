@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// imports ================================>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      <p>react-ledger</p>
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sign Up
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import AccountList from "./components/AccountList";
+
+// application =========================================>
+
+const client = new ApolloClient({
+  uri: "http://localhost:3001/graphql",
+});
+
+class App extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <div className="App">
+          <h1>react-app:</h1>
+          <AccountList />
+        </div>
+      </ApolloProvider>
+    );
+  }
 }
+
+// exports =====================================>
 
 export default App;

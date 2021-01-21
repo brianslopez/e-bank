@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 
 const accountSchema = new Schema({
   name: String,
-  ballance: Number,
+  balance: Number,
   customer_id: String,
 });
 
