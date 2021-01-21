@@ -1,4 +1,89 @@
-# **e-bank**  
+# **e-Ledger**  
+
+# Description 
+
+When a Clinent visits our Web Application the Client can Sign-Up using the Sign-Up page HE/SHE can create an account and log-in. The Clients credentials is saved and can easily enter & keep track of HE/SHE account. The User's account balance, deposit money link, transfer money link, and navigation bar links for the homepage and Sign-Out page. 
+
+The Web Application when visited after sign-up the user can log-in and is prompted to sign-in by using Username & Password. When logged in the Client is presented with the Clients account balance, deposit-money link, withdraw-money link, transfer-money link and in the naviagetion bar the links to the homepage and sign-out can be clicked on easily. 
+
+
+# Table of Contents 
+
+1. [Heroku Deployment URL](#HerokuDeploymentURL)
+2. [GitHubRepo URL](#GitHubRepoURL)
+3. [Features](#Features)
+4. [Installation](#Installation)
+5. [Cloning](#Cloning)
+6. [Usage](#Usage)
+7. [Demo](#)
+8. [TechnologiesUsed](#Technologies Used)
+9. [Credits](#Credits)
+10. [Collaborators](#Collaborators)
+11. [License](#License)
+
+
+# Heroku Deployment URL
+
+
+
+# GitHub Repo URL
+
+https://github.com/brianslopez/e-bank
+
+# Features 
+
+	1. As a person that likes to keep track of my money I spend, I want to be able to: 
+		i. Have a ledger by loging in on an account that is private. 
+		ii. And Keep track of money I have spent or I am saving. 
+	
+	2. So Users can: 
+		i. Keep track of my Expenses
+		ii. Enter into my ledger whenever I want. 
+
+# Installation
+ 
+No installation is necessary. It is deployed through Heroku. 
+
+# Cloning 
+
+If you wanted to clone this Web Application, you will need to follow these steps: 
+
+	1. 
+
+# Usage
+
+	1. Create an account. 
+	2. Log-In to your personal Account using the information you just entered. 
+	3. Hit enter and you are logged in. 
+	4. You are presented with the homepage. 
+	5. You can enter however much amount of money you want. 
+
+# Technologies Used 
+
+	1. Heroku 
+	2. React
+	3. GraphQL
+	4. Node.js
+	5. Express.js
+	6. MongoDB & Mongoose ODM
+	
+
+# Credits 
+
+# Collaborators 
+
+Name: 			    Github Page: 			        Main Responsibilities: 			
+Brian Lopez 							            Backend & Project Manager 
+Andy Tang		    https://github.com/andytang02	Frontend 
+Srikar Kudumula	 	https://github.com/Srikar2020   Authentication
+
+
+# License
+
+MIT
+
+
+
 
 ## USER EXPERIENCE
 ***
