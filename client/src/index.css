@@ -368,7 +368,7 @@ li {
 .withdraw-form {
   flex: 1 0 calc(75%);
   margin: var(--spacing-five);
-  border: 3px solid var(--tertiary);
+  border: 3px solid var(--darker);
   background: var(--red);
   display: flex;
   flex-wrap: wrap;
@@ -379,7 +379,7 @@ li {
 .deposit-form {
   flex: 1 0 calc(75%);
   margin: var(--spacing-five);
-  border: 3px solid var(--tertiary);
+  border: 3px solid var(--darker);
   background: var(--green);
   display: flex;
   flex-wrap: wrap;
@@ -410,8 +410,7 @@ li {
   width: 50%;
   height: 50%;
   background: rgba(255, 255, 255, 0.25);
-  border: 2px solid var(--primary);
-  border-radius: 25px;
+  border: 2px solid var(--darker);
 }
 
 .withdraw-overlay {
@@ -423,13 +422,13 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0);
 }
 
 .account-form {
   flex: 1 0 calc(75%);
   margin: var(--spacing-five);
-  border: 3px solid var(--primary);
+  border: 3px solid var(--darker);
   background: var(--tertiary);
   display: flex;
   flex-wrap: wrap;
@@ -460,8 +459,7 @@ li {
   width: 50%;
   height: 50%;
   background: rgba(255, 255, 255, 0.25);
-  border: 2px solid var(--primary);
-  border-radius: 25px;
+  border: 2px solid var(--darker);
 }
 
 .account-overlay {
@@ -474,7 +472,6 @@ li {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .modal-button {
