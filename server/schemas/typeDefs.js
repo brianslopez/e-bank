@@ -14,7 +14,6 @@ const typeDefs = gql`
     _id: ID
     name: String
     balance: Float
-    user: User
     transactions: [Transaction]
   }
 
@@ -23,7 +22,6 @@ const typeDefs = gql`
     name: String
     oldbalance: Float
     newbalance: Float
-    account: Account
   }
 
   type Query {
@@ -33,6 +31,15 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(firstname: String!, lastname: String!, username: String!, email: String!, password: String!): Auth
+
+    addAccount(name: String!, balance: Float!): Account
+    addTransaction(accountID: ID!, name: String!, oldbalance: Float!, newbalance: Float!): Transaction
+
+    deleteAccount(accountID: ID!): User
+    deleteTransaction(accountID: ID!, transactionID: ID!): Account
+
+    editAccount(accountID: ID!, name: String!, balance: Float!): Account
+    editTransaction(transactionID: ID!, name: String!, oldbalance: Float!, newbalance: Float!): Transaction
   }
 
   type Auth {

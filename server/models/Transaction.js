@@ -18,10 +18,6 @@ const {
     newbalance: {
         type: Number,
         required: true
-    },
-    account: {
-      type: Schema.Types.ObjectId,
-      ref: 'Account'
     }
   });
   
