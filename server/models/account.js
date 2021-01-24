@@ -1,16 +1,30 @@
-// requirments =================================>
+// dependency
+const {
+  Schema,
+  model
+} = require('mongoose');
 
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-// model =======================================>
-
+// create Schema
 const accountSchema = new Schema({
-  name: String,
-  ballance: Number,
-  customer_id: String,
+  name: {
+      type: String,
+      required: true,
+      trim: true,
+  },
+  balance: {
+    type: Number,
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  transactions: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Transaction'
+  }]
 });
 
-// exports =====================================>
+const Account = model('Account', accountSchema);
 
-module.exports = mongoose.model("Account", accountSchema);
+module.exports = Account;
