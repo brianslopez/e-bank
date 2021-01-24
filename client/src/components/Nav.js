@@ -1,5 +1,9 @@
+// imports =====================================>
+
 import React from "react";
 import { Link } from "react-router-dom";
+
+// application =================================>
 
 function Nav() {
   return (
@@ -26,5 +30,7 @@ function Nav() {
     </header>
   );
 }
+
+// exports =====================================>
 
 export default Nav;

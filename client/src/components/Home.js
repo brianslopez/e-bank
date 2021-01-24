@@ -1,22 +1,15 @@
+// imports =====================================>
+
 import React, { useState } from "react";
-import AccountList from "../components/AccountList";
+import AccountList from "./AccountList";
 import Modal from "react-modal";
+import AddAccount from "./AddAccount";
+
+// application =================================>
 
 const Home = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [formState, setFormState] = useState({ email: "", password: "" });
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
 
   function openModal() {
     setIsOpen(true);
@@ -47,43 +40,14 @@ const Home = () => {
           <button onClick={closeModal} className="modal-button">
             Close
           </button>
-          <form className="account-form" onSubmit={handleFormSubmit}>
-            <h1>Add New Account </h1>
-            <div className="account-group">
-              <label className="account-label" htmlFor="accountName">
-                Account Name:
-              </label>
-              <input
-                className="account-text"
-                placeholder="Enter Account Name"
-                name="accountName"
-                type="accountName"
-                id="accountName"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="account-group">
-              <label className="account-label" htmlFor="amount">
-                Initial Amount:{" "}
-              </label>
-              <input
-                className="account-text"
-                placeholder="$0"
-                name="amount"
-                type="amount"
-                id="amount"
-                onChange={handleChange}
-              />
-            </div>
-            <button className="contact-button" type="submit">
-              Submit
-            </button>
-          </form>
+          <AddAccount></AddAccount>
         </Modal>
       </div>
       <AccountList></AccountList>
     </div>
   );
 };
+
+// exports =====================================>
 
 export default Home;

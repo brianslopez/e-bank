@@ -14,6 +14,7 @@ class AddAccount extends Component {
       balance: 0,
     };
   }
+
   submitForm(e) {
     e.preventDefault();
     this.props.addAccountMutation({
@@ -27,24 +28,37 @@ class AddAccount extends Component {
   }
   render() {
     return (
-      <form id="add-account" onSubmit={this.submitForm.bind(this)}>
-        <div className="field">
-          <label>Account Name:</label>
+      <form className="account-form" onSubmit={this.submitForm.bind(this)}>
+        <h1>Add New Account </h1>
+        <div className="account-group">
+          <label className="account-label" htmlFor="accountName">
+            Account Name:
+          </label>
           <input
-            type="text"
+            className="account-text"
+            placeholder="Enter Account Name"
+            name="accountName"
+            type="accountName"
+            id="accountName"
             onChange={(e) => this.setState({ name: e.target.value })}
           />
         </div>
-
-        <div className="field">
-          <label>Opening Balance:</label>
+        <div className="account-group">
+          <label className="account-label" htmlFor="amount">
+            Initial Amount:{" "}
+          </label>
           <input
-            type="number"
+            className="account-text"
+            placeholder="$0"
+            name="amount"
+            type="amount"
+            id="amount"
             onChange={(e) => this.setState({ balance: e.target.value })}
           />
         </div>
-
-        <button>add account</button>
+        <button className="contact-button" type="submit">
+          Submit
+        </button>
       </form>
     );
   }
