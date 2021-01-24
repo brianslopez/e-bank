@@ -1,4 +1,4 @@
-// requirments =================================>
+// imports =====================================>
 
 const graphql = require("graphql");
 const Account = require("../models/account");
@@ -11,7 +11,7 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLInt,
-  GraphQLNonNull
+  GraphQLNonNull,
 } = graphql;
 
 // object types ================================>
@@ -118,7 +118,26 @@ const Mutation = new GraphQLObjectType({
           balance: args.balance,
           customer_id: args.customer_id,
         });
-        return account.save();
+        return account.save(args.id);
+      },
+    },
+    updateAccount: {
+      type: AccountType,
+      args: {
+        id: { type: GraphQLID },
+        balance: { type: GraphQLInt },
+      },
+      resolve(parent, args) {
+        return Account.findByIdAndUpdate(args.id, { balance: args.balance });
+      },
+    },
+    deleteAccount: {
+      type: AccountType,
+      args: {
+        id: { type: GraphQLID },
+      },
+      resolve(parent, args) {
+        return Account.findByIdAndDelete(args.id);
       },
     },
   },
