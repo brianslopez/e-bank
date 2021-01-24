@@ -27,7 +27,7 @@ class AddAccount extends Component {
   }
   render() {
     return (
-      <form id="add-book" onSubmit={this.submitForm.bind(this)}>
+      <form id="add-account" onSubmit={this.submitForm.bind(this)}>
         <div className="field">
           <label>Account Name:</label>
           <input

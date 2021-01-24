@@ -15,9 +15,9 @@ class AccountList extends Component {
     } else {
       return data.accounts.map((account) => {
         return (
-          <section className="account-list">
-            <div class="accounts-container">
-              <article class="account">
+          <section key={account.id} className="account-list">
+            <div className="accounts-container">
+              <article className="account">
                 <div>
                   <h4>{account.name}</h4>
                   <h4>Balance: {account.balance}</h4>

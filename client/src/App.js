@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <div class="page-container">
+          <div className="page-container">
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
