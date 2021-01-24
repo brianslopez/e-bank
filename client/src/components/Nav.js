@@ -7,7 +7,7 @@ function Nav() {
       <h2 className = "header-name">
         <Link to="/" style={{ textDecoration: 'none' }}>
           <a className = "header-text">
-              E-BANK
+              REACT-LEDGER
           </a>
         </Link>
       </h2>

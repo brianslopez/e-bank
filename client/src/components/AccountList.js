@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getAccountsQuery } from "./queries";
+import { Link } from "react-router-dom";
 
 // application =========================================>
 
@@ -14,19 +15,22 @@ class AccountList extends Component {
     } else {
       return data.accounts.map((account) => {
         return (
-          <div key={account.id}>
-            "Account Name: "{account.name}" Balance: "{account.balance}
-          </div>
+          <section className="account-list">
+            <div class="accounts-container">
+              <article class="account">
+                <div>
+                  <h4>{account.name}</h4>
+                  <h4>Balance: {account.balance}</h4>
+                </div>
+              </article>
+            </div>
+          </section>
         );
       });
     }
   }
   render() {
-    return (
-      <div>
-        <ul id="account-list">{this.displayAccounts()}</ul>
-      </div>
-    );
+    return <ul id="account-list">{this.displayAccounts()}</ul>;
   }
 }
 
