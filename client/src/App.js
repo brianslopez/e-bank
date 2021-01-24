@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import AccountList from "./components/AccountList";
+import AddAccount from "./components/AddAccount";
 
 // application =========================================>
 
@@ -18,10 +19,11 @@ class App extends Component {
         <div className="App">
           <h1>react-app:</h1>
           <AccountList />
+          <AddAccount />
         </div>
       </ApolloProvider>
     );
-  }
+  } 
 }
 
 // exports =====================================>

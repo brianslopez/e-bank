@@ -1,24 +1,10 @@
 // imports ================================>
 
 import React, { Component } from "react";
-import { gql } from "apollo-boost";
 import { graphql } from "react-apollo";
+import { getAccountsQuery } from "./queries";
 
 // application =========================================>
-
-const getAccountsQuery = gql`
-  {
-    accounts {
-      name
-      balance
-      id
-      customer {
-        first_name
-        last_name
-      }
-    }
-  }
-`;
 
 class AccountList extends Component {
   displayAccounts() {
@@ -28,11 +14,8 @@ class AccountList extends Component {
     } else {
       return data.accounts.map((account) => {
         return (
-          <div>
-            {account.customer.first_name}
-            {account.customer.last_name}
-            {account.name}
-            {account.balance}
+          <div key={account.id}>
+            "Account Name: "{account.name}" Balance: "{account.balance}
           </div>
         );
       });
