@@ -18,10 +18,17 @@ class AccountList extends Component {
           <section key={account.id} className="account-list">
             <div className="accounts-container">
               <article className="account">
-                <div>
-                  <h4>{account.name}</h4>
-                  <h4>Balance: {account.balance}</h4>
-                </div>
+                <form>
+                  <div>
+                    Account Name: {account.name}
+                  </div>
+                  <div>
+                    Account Balance: 
+                    <input placeholder={account.balance}></input>
+                    <button>Update</button>
+                    <button>Delete</button>
+                  </div>
+                </form>
               </article>
             </div>
           </section>
