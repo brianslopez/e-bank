@@ -62,12 +62,12 @@ const Detail = () => {
 
   return (
       <div>
-        <div class = "detail-header">
-            <div class = "detail-info">
-                <h1 class = "detail-name">{accounts[id].name}</h1>
-                <h3 class = "detail-balance">Balance: {accounts[id].balance}</h3>
+        <div className = "detail-header">
+            <div className = "detail-info">
+                <h1 className = "detail-name">{accounts[id].name}</h1>
+                <h3 className = "detail-balance">Balance: {accounts[id].balance}</h3>
             </div>
-            <button class = "detail-withdraw" onClick={openModal}>Withdraw</button>
+            <button className = "detail-withdraw" onClick={openModal}>Withdraw</button>
             <Modal
                 className = "withdraw-modal"
                 isOpen={modalIsOpen}
@@ -106,7 +106,7 @@ const Detail = () => {
                     </button>
                 </form>
             </Modal>
-            <button class = "detail-deposit" onClick={openModalWithdraw}>Deposit</button>
+            <button className = "detail-deposit" onClick={openModalWithdraw}>Deposit</button>
             <Modal
                 className = "withdraw-modal"
                 isOpen={modalIsOpenWithdraw}
@@ -146,10 +146,10 @@ const Detail = () => {
                 </form>
             </Modal>
         </div>
-        <div class = "transactions-header">
-            <h1 class = "transactions-h1">Past Transactions: </h1>
-            <h3 class = "transactions-h3">Old Balance: </h3>
-            <h3 class = "transactions-h3">New Balance: </h3>
+        <div className = "transactions-header">
+            <h1 className = "transactions-h1">Past Transactions: </h1>
+            <h3 className = "transactions-h3">Old Balance: </h3>
+            <h3 className = "transactions-h3">New Balance: </h3>
         </div>
         <TransactionList></TransactionList>
       </div>

@@ -50,7 +50,7 @@ function TransactionList() {
     
     return (
         <section className="transaction-list">
-            <div class="transactions-container">
+            <div className ="transactions-container">
                 {result.map(transaction => (
                     <Transaction index = {transaction._id} />
                 ))}

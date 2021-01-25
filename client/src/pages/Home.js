@@ -31,9 +31,9 @@ const Home = () => {
     }
   return (
     <div>
-        <div class = "home-header">
-            <h1 class = "page-header">My Accounts</h1>
-            <button class = "new-account" onClick={openModal}>Click here to add a new account</button>
+        <div className = "home-header">
+            <h1 className = "page-header">My Accounts</h1>
+            <button className = "new-account" onClick={openModal}>Click here to add a new account</button>
             <Modal
                 className = "account-modal"
                 isOpen={modalIsOpen}

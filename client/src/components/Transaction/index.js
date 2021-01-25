@@ -43,19 +43,19 @@ function Transaction({index}) {
 
     if(t.type == "Deposit"){
         return (
-            <div class="transaction-deposit">
-                <h1 class="transaction-name">{t.transactionName}</h1>
-                <h3 class="transaction-old">{t.oldBalance}</h3>
-                <h3 class="transaction-new">{t.newBalance}</h3>
+            <div className="transaction-deposit">
+                <h1 className="transaction-name">{t.transactionName}</h1>
+                <h3 className="transaction-old">{t.oldBalance}</h3>
+                <h3 className="transaction-new">{t.newBalance}</h3>
             </div>
         );
     }
     else{
         return (
-            <div class="transaction-withdraw">
-                <h1 class="transaction-name">{t.transactionName}</h1>
-                <h3 class="transaction-old">{t.oldBalance}</h3>
-                <h3 class="transaction-new">{t.newBalance}</h3>
+            <div className="transaction-withdraw">
+                <h1 className="transaction-name">{t.transactionName}</h1>
+                <h3 className="transaction-old">{t.oldBalance}</h3>
+                <h3 className="transaction-new">{t.newBalance}</h3>
             </div>
         );
     }

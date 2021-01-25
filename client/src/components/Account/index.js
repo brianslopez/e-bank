@@ -22,8 +22,8 @@ function Account({index}) {
 
     return (
         
-            <article class="account">
-                <div class={`account-img account-${index}`}>
+            <article className="account">
+                <div className={`account-img account-${index}`}>
                     <div>
                         <Link to={`/accounts/${index}`} style={{ textDecoration: 'none' }}><h2 className = "account-link">Withdraw/Deposit</h2></Link>
                         <h3>{account.name}</h3>

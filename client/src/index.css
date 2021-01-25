@@ -1,5 +1,5 @@
 :root {
-  --primary: #22577a;
+  --primary: #00008b;
   --secondary: #8cff98;
   --tertiary: #ffbf46;
   --light: #e2e4f6;
@@ -19,6 +19,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
 }
 
 h1,
@@ -183,6 +187,7 @@ li {
   border: 3px solid #cccccc;
   border-radius: 25px;
   padding-left: 10px;
+  font-size: 18px;
   font-family: 'Roboto';
   color: var(--darker);
   flex: 0 0 calc(100%);
@@ -344,6 +349,7 @@ li {
 
 .new-account {
   color: var(--darker);
+  font-size: 16px;
   border-radius: 25px;
   padding: var(--spacing-two);
   margin-top: var(--spacing-two);
