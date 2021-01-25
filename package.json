@@ -1,7 +1,7 @@
 {
   "name": "e-bank",
   "version": "1.0.0",
-  "description": "***",
+  "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
