@@ -6,7 +6,7 @@ An online ledger website which allows users to keep track of their account balan
 
 # Table of Contents 
 
-1. [Deployed Application](#Deployed Application)
+1. [Deployed Application](#DeployedApplication)
 2. [Screenshots](#Screenshots)
 3. [Installation](#Installation)
 4. [Cloning](#Usage)
