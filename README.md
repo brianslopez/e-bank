@@ -1,103 +1,63 @@
-# **e-bank**  
+### E-Bank
 
-## USER EXPERIENCE
-***
+# Description 
 
-- GIVEN a fictional banking website  
+An online ledger website which allows users to keep track of their account balances and the transactions on each of their bank accounts. Built on the MERN stack with Apollo GraphQL, with the help of JSON Web Token's to handle Authorization.
 
-- WHEN I visit the site for the first time
-- THEN I am presented with the homepage; witch includes a welcome message and navigation links for; home, sign-up, and, log-in.  
+# Table of Contents 
 
-- WHEN I click the sign-up link
-- THEN I am promoted to enter first_name, last_name, username, and password
-- WHEN I click the sign-up button
-- THEN my user credentials are saved, I am logged into the site, and presented with the homepage; which includes; user’s account balance, deposit money link, withdraw money link, transfer money link, and navigation bar links for the homepage and sign-out.    
-
-- WHEN I revisit the site at a later time and click the log-in link
-- THEN I am prompted to enter username & password
-- WHEN I click the log-in button I am logged into the site and presented with homepage;which includes; user’s account balance, deposit-money link, withdraw-money link, transfer-money link, and navigation bar links for the homepage and sign-out  
-
-- WHEN I click deposit-money link  
-- THEN I am prompted for deposit amount  
-- WHEN I click the deposit-money-button  
-- THEN the user’s balance is increased by the amount entered and the user is presented with the homepage (user balance updated)  
-
-- WHEN I click withdraw-money link  
-- THEN I am prompted for withdraw amount  
-- WHEN I click the withdraw-money-button  
-- IF the withdraw amount entered is greater than the user’s balance  
-- THEN the user is presented with an error message and prompted for new withdraw amount  
-- IF the withdraw amount entered is less than or equal to the user’s balance  
-- THEN the user’s balance is decreased by the amount entered and the user is presented with the homepage (user balance updated)  
-
-- WHEN I click transfer-money link  
-- THEN I am prompted for the username of the user account to transfer to and the amount  
-- WHEN I click the deposit-money-button  
-- IF the withdraw amount entered is greater than the user’s balance  
-- THEN the user is presented with an error message and prompted for new transfer amount  
-- IF the withdraw amount entered is less than or equal to the user’s balance
-- THEN the user’s balance is decreased by the amount entered, the user who is receiving the transfer’s balance is increased by the amount entered and the user is presented with the homepage (user balance updated)  
-
-## PROJECT REQUIREMENTS
-
-***  
+1. [Deployed Application](#Deployed Application)
+2. [Screenshots](#Screenshots)
+3. [Installation](#Installation)
+4. [Cloning](#Usage)
+5. [Technologies](#Technologies)
+6. [Credits](#Credits)
+7. [Collaborators](#Collaborators)
+8. [License](#License)
 
 
-* Use React for the front end.
+# Deployed Application
 
-* Use GraphQL with a Node.js and Express.js server.
+https://thawing-wave-39695.herokuapp.com/
 
-* Use MongoDB and the Mongoose ODM for the database.
+# Screenshots
 
-* Use queries and mutations for retrieving, adding, updating, and deleting data.
+![ebank1](https://user-images.githubusercontent.com/61364418/105698023-2b668880-5eba-11eb-883c-9444d17920ba.JPG)
+![ebank2](https://user-images.githubusercontent.com/61364418/105698026-2c97b580-5eba-11eb-8253-95fc6732a79c.JPG)
+![ebank3](https://user-images.githubusercontent.com/61364418/105698028-2dc8e280-5eba-11eb-9cad-70217ae18f2f.JPG)
 
-* Be deployed using Heroku (with data).
+# Installation
+ 
+No installation is necessary. It is deployed through Heroku. 
 
-* Meet the minimum requirements of a PWA:
+# Usage
 
-	* Uses a web manifest
-	
-	* Uses a service worker for offline functionality
-	
-	* Is installable
+If you wanted to use this web application locally, you will need to follow these steps: 
 
-* Have a polished UI.
+	1. git clone git@github.com:brianslopez/e-bank.git
+	2. npm install
+	3. npm start
 
-* Be responsive.
+# Technologies
 
-* Be interactive (i.e., accept and respond to user input).
+	1. Heroku 
+	2. React.js
+	3. Graph QL
+	4. Node.js
+	5. Express.js
+	6. Mongo DB & Mongoose ODM
+	7. CSS
+	8. JavaScript
 
-* Include authentication (JWT).
+# Credits 
 
-* Protect sensitive API key information on the server.
+# Collaborators 
+ 			
+Brian Lopez: Backend & Project Manager 
+Andy Tang: https://github.com/andytang02	Frontend 
+Srikar Kudumula: https://github.com/Srikar2020   Authentication & ReadMe
 
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+# License
 
-* Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+MIT
 
-Finally, you must add your project to the portfolio that you created in Module 20.
-
-You should also consider the following suggestions to help your project stand out:
-
-Instead of using a CSS library like Bootstrap, consider one of the following suggestions:
-
-* Look into the concept of **CSS-in-JS**, which abstracts CSS to the component level, using JavaScript to describe styles in a declarative and maintainable way. Some popular libraries include [styled-components](https://styled-components.com/) and [Emotion](https://emotion.sh/docs/introduction).
-
-* Try using a component library, such as [Semantic UI](https://semantic-ui.com/), [Chakra UI](https://chakra-ui.com/), or [Ant Design](https://ant.design/).
-
-* Create all the CSS for your application just using CSS.
-
-Ultimately, it doesn't matter which of these options you choose&mdash;it just needs to look professional and be mobile-friendly.
-
-Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, you could set up your site to accept charitable donations.
-
-**More details about the project will be provided in the lessons for Module 23 in Canvas.**
-
-## PROJECT TEAM  
-
-***
-
-Andy Tang,
-Brian Lopez,
-Dharma Teja Koneru,
-Srikar Kudumula
