@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import TransactionList from "../components/TransactionList";
 import Modal from "react-modal";
 
@@ -18,8 +18,8 @@ const Detail = () => {
     const [formState, setFormState] = useState({ name: '', amount: '' });
     const [formStateW, setFormStateW] = useState({ name: '', amount: '' });
 
-    const [addTransaction, { error1 }] = useMutation(ADD_TRANSACTION);
-    const [editAccount, { error2 }] = useMutation(EDIT_ACCOUNT);
+    const [addTransaction] = useMutation(ADD_TRANSACTION);
+    const [editAccount] = useMutation(EDIT_ACCOUNT);
 
     const handleFormSubmit = async event => {
       if(loading) return;

@@ -12,7 +12,7 @@ const Home = () => {
     const { loading, data } = useQuery(GET_ME);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [formState, setFormState] = useState({ name: '', balance:'' });
-    const [addAccount, { error }] = useMutation(ADD_ACCOUNT);
+    const [addAccount] = useMutation(ADD_ACCOUNT);
 
     const handleFormSubmit = async event => {
         event.preventDefault();
