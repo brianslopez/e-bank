@@ -5,6 +5,8 @@
   --light: #e2e4f6;
   --dark: #0a8754;
   --darker: #111111;
+  --darkgray: 	#656565;
+  --lightgray: #878787;
   --red: rgb(228, 46, 1);
   --green: rgb(0,255,0);
   --error: rgb(228, 46, 1);
@@ -33,7 +35,14 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
-  color: var(--light);
+  font-weight: 600;
+  color: var(--darker);
+}
+
+a{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--darkgray);
 }
 
 h2 {
@@ -42,14 +51,14 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  font-family:"Arial";
-  color: var(--secondary);
+  font-family: 'Roboto';
+  color: var(--darker);
 }
 
 h3 a {
   font-size: 1.75rem;
-  font-family:"Arial";
-  color: var(--secondary);
+  font-family: 'Roboto';
+  color: var(--darkgray);
 }
 
 h4 {
@@ -58,7 +67,7 @@ h4 {
 
 h5 {
   font-size: 1.25rem;
-  font-family:"Arial";
+  font-family: 'Roboto';
   color: var(--tertiary);
 }
 
@@ -84,8 +93,8 @@ body {
   font-size: 18px;
   letter-spacing: .1em;
   color: var(--light);
-  font-family: 'Arial';
-  background: linear-gradient(var(--primary), 70%, var(--secondary));
+  font-family: 'Roboto';
+  background: var(--primary);
 }
 
 li {
@@ -118,9 +127,9 @@ li {
 
 .header-text {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--light);
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Roboto';
   font-size: 35px;
 }
 
@@ -141,7 +150,8 @@ li {
 
 .nav-text {
   color: var(--light);
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Roboto';
+  font-weight: 400;
 }
 
 .contact {
@@ -153,8 +163,7 @@ li {
 .contact-form {
   flex: 1 0 calc(75%);
   margin: var(--spacing-five);
-  border: 3px solid var(--tertiary);
-  background: rgba(0,0,0,0.2);
+  background: var(--light);
   display: flex;
   flex-wrap: wrap;
   padding: var(--spacing-two);
@@ -166,14 +175,15 @@ li {
   flex-wrap: wrap;
 }
 .contact-label {
-  color: var(--secondary);
+  color: var(--darker);
+  margin-left: 10px;
 }
 .contact-text {
 	height: 40px;
-	border: 3px solid #cccccc;
-  padding: 5px;
-  font-size: 1.25rem; 
-  font-family:"Arial";
+  border: 3px solid #cccccc;
+  border-radius: 25px;
+  padding-left: 10px;
+  font-family: 'Roboto';
   color: var(--darker);
   flex: 0 0 calc(100%);
 }
@@ -208,12 +218,14 @@ li {
 
 .transactions-h1 {
   color: var(--light);
-  flex: 0 0 80%;
+  font-size: 24px;
+  flex: 0 0 70%;
 }
 
 .transactions-h3 {
   color: var(--light);
-  flex: 0 0 10%;
+  font-size: 24px;
+  flex: 0 0 15%;
 }
 
 .transactions-container {
@@ -222,36 +234,39 @@ li {
 }
 
 .transaction-deposit {
-  background-color: rgb(0,255,0);
+  background-color: rgb(0,220,0);
   flex: 0 0 calc(100%);
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid var(--light);
+  border-top: 1px solid var(--light);
   padding: var(--spacing-two);
 }
 
 .transaction-withdraw {
-  background-color: rgb(228, 46, 1);
+  background-color: rgba(252, 25, 9, 0.925);
   flex: 0 0 calc(100%);
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid var(--light);
+  border-top: 1px solid var(--light);
   padding: var(--spacing-two);
 }
 
 .transaction-name {
-  color: var(--primary);
-  flex: 0 0 80%;
+  color: var(--darker);
+  font-weight: 500;
+  flex: 0 0 70%;
 }
 
 .transaction-old {
-  color: var(--secondary);
-  flex: 0 0 10%;
+  color: var(--darker);
+  font-weight: 500;
+  flex: 0 0 15%;
 }
 
 .transaction-new {
-  color: var(--tertiary);
-  flex: 0 0 10%;
+  color: var(--darker);
+  font-weight: 600;
+  flex: 0 0 15%;
 }
 
 .accounts-container {
@@ -263,13 +278,13 @@ li {
 
 .account{
   margin-top: var(--spacing-five);
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,1);
   color: var(--primary);
   flex: 0 0 calc(90%);
-  border: 2px solid var(--tertiary);
   display: flex;
   height: 225px;
-  border-radius: 15px;
+  box-shadow: 0 10px 24px hsla(0, 0%, .2);
+  border-top: 3px solid var(--secondary);
 }
 
 .account-img {
@@ -293,8 +308,10 @@ li {
   width: 100%;
   z-index: 1;
   font-size: 28px;
+  font-weight: 600;
   margin-bottom: 5px;
-  color: var(--secondary)
+  color: var(--darker);
+  border-top: 3px solid var(--primary);
 }
 
 .account-img h4 {
@@ -302,22 +319,23 @@ li {
   width: 100%;
   z-index: 1;
   font-size: 18px;
+  font-weight: 400;
   top: 200px;
   transition: 0.3s;
-  color: var(--light)
+  color: var(--darkgray);
 }
 
 .account-link {
   position: relative;
-  top: -100px;
+  top: -90px;
   width: 100%;
   z-index: 1;
   font-size: 15px;
-  color: var(--darker);
-  background: linear-gradient(90deg,var(--red),60%, var(--green));
+  color: var(--light);
+  background: var(--dark);
   width: fit-content;
-  padding: var(--spacing-half);
-  border-radius: 5px;
+  padding: var(--spacing-one);
+  border-radius: 25px;
 }
 
 .account:hover .account-img h3, .account:hover .account-img h4 {
@@ -325,8 +343,8 @@ li {
 }
 
 .new-account {
-  color: var(--primary);
-  border: 2px solid var(--light);
+  color: var(--darker);
+  border-radius: 25px;
   padding: var(--spacing-two);
   margin-top: var(--spacing-two);
   margin-right: var(--spacing-five);
@@ -336,142 +354,98 @@ li {
 .detail-header {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
 }
 
 .detail-info {
-  flex: 0 0 calc(75%);
+  flex: 0 0 calc(65%);
+  margin-left: var(--spacing-five);
+}
+
+.detail-name {
+  color: var(--lighter);
+}
+
+.detail-balance {
+  color: var(--lighter);
 }
 
 .detail-withdraw {
-  color: var(--primary);
-  border: 2px solid var(--light);
+  color: var(--darker);
   padding: var(--spacing-two);
   margin-top: var(--spacing-two);
-  margin-right: var(--spacing-five);
   background-color: rgb(228, 46, 1);
-  flex: 0 0 auto;
+  margin-right: var(--spacing-two);
+  border-radius: 25px;
+  font-size: 18px;
+  flex: 0 0 calc(15%);
   height: fit-content;
 }
 
 .detail-deposit {
-  color: var(--primary);
-  border: 2px solid var(--light);
+  color: var(--darker);
   padding: var(--spacing-two);
   margin-top: var(--spacing-two);
-  margin-right: var(--spacing-five);
+  font-size: 18px;
   background-color: rgb(0,255,0);
-  flex: 0 0 auto;
+  border-radius: 25px;
+  flex: 0 0 calc(15%);
   height: fit-content;
 }
 
-.withdraw-form {
-  flex: 1 0 calc(75%);
+.withdraw-form, .deposit-form, .account-form {
+  width: 650px;
+  height: 300px;
   margin: var(--spacing-five);
-  border: 3px solid var(--darker);
-  background: var(--red);
+  background: var(--light);
   display: flex;
   flex-wrap: wrap;
   padding: var(--spacing-two);
   border-radius: 25px;
+  box-shadow: 0 5px 35px hsla(0, 0% .2);
 }
 
-.deposit-form {
-  flex: 1 0 calc(75%);
-  margin: var(--spacing-five);
-  border: 3px solid var(--darker);
-  background: var(--green);
-  display: flex;
-  flex-wrap: wrap;
-  padding: var(--spacing-two);
-  border-radius: 25px;
-}
-
-.withdraw-group {
+.withdraw-group, .account-group {
   flex: 0 0 calc(100%);
   display: flex;
   flex-wrap: wrap;
 }
-.withdraw-label {
-  color: var(--tertiary);
+.withdraw-label, .account-label {
+  color: var(--darker);
 }
-.withdraw-text {
+.withdraw-text, .account-text {
 	height: 40px;
 	border: 3px solid #cccccc;
   padding: 5px;
+  border-radius: 25px;
   font-size: 1.25rem; 
-  font-family:"Arial";
   color: var(--darker);
   flex: 0 0 calc(100%);
 }
 
-.withdraw-modal {
+.withdraw-modal, .account-modal {
   position: absolute;
-  width: 50%;
-  height: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  height: 75%;
+  background: var(--primary);
   border: 2px solid var(--darker);
 }
 
-.withdraw-overlay {
+.withdraw-overlay, .account-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
+  z-index: 9999;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0);
-}
-
-.account-form {
-  flex: 1 0 calc(75%);
-  margin: var(--spacing-five);
-  border: 3px solid var(--darker);
-  background: var(--tertiary);
-  display: flex;
-  flex-wrap: wrap;
-  padding: var(--spacing-two);
-  border-radius: 25px;
-}
-
-.account-group {
-  flex: 0 0 calc(100%);
-  display: flex;
-  flex-wrap: wrap;
-}
-.account-label {
-  color: var(--primary);
-}
-.account-text {
-	height: 40px;
-	border: 3px solid #cccccc;
-  padding: 5px;
-  font-size: 1.25rem; 
-  font-family:"Arial";
-  color: var(--darker);
-  flex: 0 0 calc(100%);
-}
-
-.account-modal {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  border: 2px solid var(--darker);
-}
-
-.account-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
 }
 
 .modal-button {
@@ -503,7 +477,6 @@ li {
   .about-description {
     flex: 0 1 calc(100%);
     font-size: 1.75rem;
-    font-family:"Arial";
     color: var(--secondary);
     width: 50%;
   }
@@ -522,7 +495,6 @@ li {
     text-decoration: none;
     font-weight: bold;
     color: var(--light);
-    font-family: 'Brush Script MT', cursive;
     font-size: 35px;
   }
   
@@ -543,7 +515,6 @@ li {
   
   .nav-text {
     color: var(--light);
-    font-family: 'Brush Script MT', cursive;
   }
 }
 
@@ -579,7 +550,6 @@ li {
     text-decoration: none;
     font-weight: bold;
     color: var(--light);
-    font-family: 'Brush Script MT', cursive;
     font-size: 35px;
   }
   
@@ -600,7 +570,6 @@ li {
 
   .nav-text {
     color: var(--light);
-    font-family: 'Brush Script MT', cursive;
   }
 
   .about-container {

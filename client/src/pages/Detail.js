@@ -64,8 +64,8 @@ const Detail = () => {
       <div>
         <div class = "detail-header">
             <div class = "detail-info">
-                <h1>{accounts[id].name}</h1>
-                <h3>Balance: {accounts[id].balance}</h3>
+                <h1 class = "detail-name">{accounts[id].name}</h1>
+                <h3 class = "detail-balance">Balance: {accounts[id].balance}</h3>
             </div>
             <button class = "detail-withdraw" onClick={openModal}>Withdraw</button>
             <Modal
@@ -77,7 +77,6 @@ const Detail = () => {
                 contentLabel="Example Modal"
                 >
 
-                <button onClick={closeModal} className="modal-button">Close</button>
                 <form className = "withdraw-form" onSubmit={handleFormSubmit}>
                     <h1>Withdraw</h1>
                     <div className="withdraw-group">
@@ -117,7 +116,6 @@ const Detail = () => {
                 contentLabel="Example Modal"
                 >
 
-                <button onClick={closeModalWithdraw} className="modal-button">Close</button>
                 <form className = "deposit-form" onSubmit={handleFormSubmit}>
                     <h1>Deposit</h1>
                     <div className="withdraw-group">

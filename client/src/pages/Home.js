@@ -42,8 +42,6 @@ const Home = () => {
                 overlayClassName="account-overlay"
                 contentLabel="Example Modal"
                 >
-
-                <button onClick={closeModal} className="modal-button">Close</button>
                 <form className = "account-form" onSubmit={handleFormSubmit}>
                     <h1>Add New Account </h1>
                     <div className="account-group">
