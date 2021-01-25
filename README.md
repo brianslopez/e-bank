@@ -6,6 +6,8 @@ When a Clinent visits our Web Application the Client can Sign-Up using the Sign-
 
 The Web Application when visited after sign-up the user can log-in and is prompted to sign-in by using Username & Password. When logged in the Client is presented with the Clients account balance, deposit-money link, withdraw-money link, transfer-money link and in the naviagetion bar the links to the homepage and sign-out can be clicked on easily. 
 
+The Web Application can allow the user to upadate accounts by adding funds and delete funds to be able to keep track of financial.  
+
 
 # Table of Contents 
 
@@ -16,7 +18,7 @@ The Web Application when visited after sign-up the user can log-in and is prompt
 5. [Cloning](#Cloning)
 6. [Usage](#Usage)
 7. [Demo](#)
-8. [TechnologiesUsed](#Technologies Used)
+8. [Technologies](#Technologies)
 9. [Credits](#Credits)
 10. [Collaborators](#Collaborators)
 11. [License](#License)
@@ -48,7 +50,9 @@ No installation is necessary. It is deployed through Heroku.
 
 If you wanted to clone this Web Application, you will need to follow these steps: 
 
-	1. 
+	1. git clone 
+	2. npm install
+	3. npm start 
 
 # Usage
 
@@ -56,16 +60,21 @@ If you wanted to clone this Web Application, you will need to follow these steps
 	2. Log-In to your personal Account using the information you just entered. 
 	3. Hit enter and you are logged in. 
 	4. You are presented with the homepage. 
-	5. You can enter however much amount of money you want. 
+	5. You can enter however much amount of money you want to keep track off.
+	6. The person can update account by adding funds or deleting however much.  
 
-# Technologies Used 
+# Technologies
 
 	1. Heroku 
 	2. React
-	3. GraphQL
+	3. Graph QL
 	4. Node.js
 	5. Express.js
-	6. MongoDB & Mongoose ODM
+	6. Mongo DB & Mongoose ODM
+	7. CSS
+	8. Redux
+	9. JavaScript
+	10. Styled Components
 	
 
 # Credits 
@@ -74,7 +83,8 @@ If you wanted to clone this Web Application, you will need to follow these steps
  			
 Brian Lopez: Backend & Project Manager 
 Andy Tang: https://github.com/andytang02	Frontend 
-Srikar Kudumula: https://github.com/Srikar2020   Authentication
+Srikar Kudumula: https://github.com/Srikar2020   Authentication & ReadMe
+
 
 
 # License
@@ -179,9 +189,10 @@ Consider integrating the Stripe payment platform. Even if you don’t create an 
 
 ## PROJECT TEAM  
 
+Brian Lopez
+Andy Tang
+Srikar Kudumula
+
 ***
 
-Andy Tang,
-Brian Lopez,
-Dharma Teja Koneru,
-Srikar Kudumula
+
