@@ -3,26 +3,37 @@ import { Link, useParams } from "react-router-dom";
 import TransactionList from "../components/TransactionList";
 import Modal from "react-modal";
 
-const Detail = () => {
-    const [accounts] = useState([
-        {
-            name: "Savings Account",
-            balance: '$73,500'
-        },
-        {
-            name: "Checking Account",
-            balance: "$37,225"
-        },
-        {
-            name: "Daughter's College Fund",
-            balance: "$15,750"
-        }
-    ]);
+import { useQuery } from '@apollo/react-hooks';
+import { GET_ACCOUNT } from '../utils/queries';
 
-    const [formState, setFormState] = useState({ email: '', password: '' })
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_TRANSACTION, EDIT_ACCOUNT} from '../utils/mutations';
+
+const Detail = () => {
+    const { id } = useParams();
+    const { loading, data } = useQuery(GET_ACCOUNT, {
+        variables: {accountID: id}
+    });
+
+    const [formState, setFormState] = useState({ name: '', amount: '' });
+    const [formStateW, setFormStateW] = useState({ name: '', amount: '' });
+
+    const [addTransaction, { error1 }] = useMutation(ADD_TRANSACTION);
+    const [editAccount, { error2 }] = useMutation(EDIT_ACCOUNT);
 
     const handleFormSubmit = async event => {
+      if(loading) return;
       event.preventDefault();
+      try {
+        const account = data.getAccount;
+        const updatedbalance = account.balance - parseFloat(formState.amount);
+        await addTransaction({ variables: {accountID: account._id, name: formState.name, oldbalance: account.balance, newbalance: updatedbalance} });
+        await editAccount({variables: {accountID: account._id, name: account.name, balance: updatedbalance}})
+        closeModal();
+        window.location.reload();
+      } catch (e) {
+        console.log(e)
+      }
     };
   
     const handleChange = event => {
@@ -33,14 +44,32 @@ const Detail = () => {
       });
     };
 
-  const { id } = useParams();
+    const handleFormSubmitW = async event => {
+        if(loading) return;
+        event.preventDefault();
+        try {
+          const account = data.getAccount;
+          const updatedbalance = account.balance + parseFloat(formStateW.amount);
+          await addTransaction({ variables: {accountID: account._id, name: formStateW.name, oldbalance: account.balance, newbalance: updatedbalance} });
+          await editAccount({variables: {accountID: account._id, name: account.name, balance: updatedbalance}})
+          closeModal();
+          window.location.reload();
+        } catch (e) {
+          console.log(e)
+        }
+    };
+    
+    const handleChangeW = event => {
+        const { name, value } = event.target;
+        setFormStateW({
+          ...formStateW,
+          [name]: value
+        });
+    };
+
     const [modalIsOpen, setIsOpen] = useState(false);
     function openModal() {
         setIsOpen(true);
-    }
-    
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
     }
     
     function closeModal(){
@@ -52,10 +81,6 @@ const Detail = () => {
         setIsOpenWithdraw(true);
     }
     
-    function afterOpenModalWithdraw() {
-        // references are now sync'd and can be accessed.
-    }
-    
     function closeModalWithdraw(){
         setIsOpenWithdraw(false);
     }
@@ -63,15 +88,16 @@ const Detail = () => {
   return (
       <div>
         <div className = "detail-header">
-            <div className = "detail-info">
-                <h1 className = "detail-name">{accounts[id].name}</h1>
-                <h3 className = "detail-balance">Balance: {accounts[id].balance}</h3>
-            </div>
+            { !loading && data &&
+                <div className = "detail-info">
+                    <h1 className = "detail-name">{data.getAccount.name}</h1>
+                    <h3 className = "detail-balance">Balance: ${data.getAccount.balance}</h3>
+                </div>
+            }
             <button className = "detail-withdraw" onClick={openModal}>Withdraw</button>
             <Modal
                 className = "withdraw-modal"
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 overlayClassName="withdraw-overlay"
                 contentLabel="Example Modal"
@@ -80,13 +106,12 @@ const Detail = () => {
                 <form className = "withdraw-form" onSubmit={handleFormSubmit}>
                     <h1>Withdraw</h1>
                     <div className="withdraw-group">
-                        <label className="withdraw-label" htmlFor="transactionName">Transaction Name:</label>
+                        <label className="withdraw-label" htmlFor="name">Transaction Name:</label>
                         <input
                             className = "withdraw-text"
                             placeholder="Enter Transaction Name"
-                            name="transactionName"
-                            type="transactionName"
-                            id="transactionName"
+                            name="name"
+                            value = {formState.name}
                             onChange={handleChange}
                         />
                     </div>
@@ -96,8 +121,7 @@ const Detail = () => {
                             className = "withdraw-text"
                             placeholder="$0"
                             name="amount"
-                            type="amount"
-                            id="amount"
+                            value = {formState.amount}
                             onChange={handleChange}
                         />
                     </div>
@@ -110,23 +134,21 @@ const Detail = () => {
             <Modal
                 className = "withdraw-modal"
                 isOpen={modalIsOpenWithdraw}
-                onAfterOpen={afterOpenModalWithdraw}
                 onRequestClose={closeModalWithdraw}
                 overlayClassName="withdraw-overlay"
                 contentLabel="Example Modal"
                 >
 
-                <form className = "deposit-form" onSubmit={handleFormSubmit}>
+                <form className = "deposit-form" onSubmit={handleFormSubmitW}>
                     <h1>Deposit</h1>
                     <div className="withdraw-group">
-                        <label className="withdraw-label" htmlFor="transactionName">Transaction Name:</label>
+                        <label className="withdraw-label" htmlFor="name">Transaction Name:</label>
                         <input
                             className = "withdraw-text"
                             placeholder="Enter Transaction Name"
-                            name="transactionName"
-                            type="transactionName"
-                            id="transactionName"
-                            onChange={handleChange}
+                            name="name"
+                            value = {formStateW.name}
+                            onChange={handleChangeW}
                         />
                     </div>
                     <div className="withdraw-group">
@@ -135,9 +157,8 @@ const Detail = () => {
                             className = "withdraw-text"
                             placeholder="$0"
                             name="amount"
-                            type="amount"
-                            id="amount"
-                            onChange={handleChange}
+                            value = {formStateW.amount}
+                            onChange={handleChangeW}
                         />
                     </div>
                     <button className = "contact-button" type="submit">

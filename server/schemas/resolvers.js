@@ -18,6 +18,15 @@ const resolvers = {
             }
 
             throw new AuthenticationError('Not logged in');
+        },
+        getAccount: async(parent, {accountID}, context) => {
+            if(context.user) {
+                const accountData = Account.findOne({_id: accountID})
+                .populate('transactions');
+            
+                return accountData;
+            }
+            throw new AuthenticationError('Not logged in');
         }
     },
     Mutation: {
