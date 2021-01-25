@@ -28,6 +28,28 @@ const addAccountMutation = gql`
   }
 `;
 
+const updateAccountMutation = gql`
+  mutation($id: ID!, $balance: Int) {
+    updateAccount(id: $id, balance: $balance) {
+      id
+      balance
+    }
+  }
+`;
+
+const deleteAccountMutation = gql`
+  mutation($id: ID!) {
+    deleteAccount(id: $id) {
+      id
+    }
+  }
+`;
+
 // exports =====================================>
 
-export { getAccountsQuery, addAccountMutation };
+export {
+  getAccountsQuery,
+  addAccountMutation,
+  updateAccountMutation,
+  deleteAccountMutation,
+};
