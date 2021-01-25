@@ -14,7 +14,7 @@ function TransactionList() {
     return (
         <section className="transaction-list">
             {
-                !loading &&                 
+                !loading && data.getAccount.transactions &&              
                 <div className ="transactions-container">
                     {data.getAccount.transactions.map(t => (
                             (t.newbalance > t.oldbalance) ?

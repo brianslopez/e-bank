@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div>
         <div className = "home-header">
-            <h1 className = "page-header">{!loading && `${data.me.firstname} ${data.me.lastname}'s `} Accounts</h1>
+            <h1 className = "page-header">{!loading && data.me && `${data.me.firstname} ${data.me.lastname}'s `} Accounts</h1>
             <button className = "new-account" onClick={openModal}>Click here to add a new account</button>
             <Modal
                 className = "account-modal"
