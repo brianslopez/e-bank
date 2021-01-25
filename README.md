@@ -1,4 +1,110 @@
-# **e-bank**  
+# **e-Ledger**  
+
+# Description 
+
+When a Clinent visits our Web Application the Client can Sign-Up using the Sign-Up page HE/SHE can create an account and log-in. The Clients credentials is saved and can easily enter & keep track of HE/SHE account. The User's account balance, deposit money link, transfer money link, and navigation bar links for the homepage and Sign-Out page. 
+
+The Web Application when visited after sign-up the user can log-in and is prompted to sign-in by using Username & Password. When logged in the Client is presented with the Clients account balance, deposit-money link, withdraw-money link, transfer-money link and in the naviagetion bar the links to the homepage and sign-out can be clicked on easily. 
+
+The Web Application can allow the user to upadate accounts by adding funds and delete funds to be able to keep track of financial.  
+
+
+# Table of Contents 
+
+1. [Heroku Deployment URL](#HerokuDeploymentURL)
+2. [GitHubRepo URL](#GitHubRepoURL)
+3. [Demo](#Demo)
+4. [Installation](#Installation)
+5. [Cloning](#Cloning)
+6. [Usage](#Usage)
+7. [Demo](#)
+8. [Technologies](#Technologies)
+9. [Credits](#Credits)
+10. [Collaborators](#Collaborators)
+11. [License](#License)
+
+
+# Heroku Deployment URL
+
+Server Deployment (graphiql): https://guarded-thicket-19654.herokuapp.com/ 
+React-App Deployment: https://whispering-woodland-95307.herokuapp.com/. 
+
+# GitHub Repo URL
+
+https://github.com/brianslopez/e-bank
+
+# Demo (Server)
+
+GETACCOUNTS:
+![Demo](./getAccounts.gif)
+
+UPDATEACCOUNT:
+![Demo](./updateAccount.gif)
+
+DELETEACCOUNT:
+![Demo](./deleteAccount.gif)
+
+# Demo (Client)
+
+ADDACCOUNT:
+![Demo](./addAccount.gif)
+
+
+# Installation
+ 
+No installation is necessary. It is deployed through Heroku. 
+
+# Cloning 
+
+If you wanted to clone this Web Application, you will need to follow these steps: 
+
+	1. git clone
+	2. cd/server
+	2. npm install
+	3. npm start (starts server)
+	4. cd/client
+	5. npm install
+	6. npm start
+
+# Usage
+
+	1. Create an account. 
+	2. Log-In to your personal Account using the information you just entered. 
+	3. Hit enter and you are logged in. 
+	4. You are presented with the homepage. 
+	5. You can enter however much amount of money you want to keep track off.
+	6. The person can update account by adding funds or deleting however much.  
+
+# Technologies
+
+	1. Heroku 
+	2. React
+	3. Graph QL
+	4. Node.js
+	5. Express.js
+	6. Mongo DB & Mongoose ODM
+	7. CSS
+	8. Redux
+	9. JavaScript
+	10. Styled Components
+	
+
+# Credits 
+
+# Collaborators 
+ 			
+Brian Lopez: Backend & Project Manager 
+Andy Tang: https://github.com/andytang02	Frontend 
+Srikar Kudumula: https://github.com/Srikar2020   Authentication & ReadMe
+
+
+
+# License
+
+MIT
+
+
+
 
 ## USER EXPERIENCE
 ***
@@ -9,7 +115,7 @@
 - THEN I am presented with the homepage; witch includes a welcome message and navigation links for; home, sign-up, and, log-in.  
 
 - WHEN I click the sign-up link
-- THEN I am promoted to enter first_name, last_name, username, and password
+- THEN I am promoted to enter username and password
 - WHEN I click the sign-up button
 - THEN my user credentials are saved, I am logged into the site, and presented with the homepage; which includes; user’s account balance, deposit money link, withdraw money link, transfer money link, and navigation bar links for the homepage and sign-out.    
 
@@ -95,9 +201,9 @@ Consider integrating the Stripe payment platform. Even if you don’t create an 
 
 ## PROJECT TEAM  
 
+Brian Lopez
+Andy Tang
+Srikar Kudumula
+
 ***
 
-Andy Tang,
-Brian Lopez,
-Dharma Teja Koneru,
-Srikar Kudumula
