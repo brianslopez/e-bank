@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 // application =========================================>
 
 const client = new ApolloClient({
-  uri: "http://localhost:3001/graphql",
+  uri: "https://guarded-thicket-19654.herokuapp.com/",
 });
 
 class App extends Component {

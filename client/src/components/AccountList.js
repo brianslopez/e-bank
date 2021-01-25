@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
+import compose from "lodash.flowright";
 import {
   getAccountsQuery,
   updateAccountMutation,
@@ -12,8 +13,17 @@ import { Link } from "react-router-dom";
 // application =================================>
 
 class AccountList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: 0,
+      balance: 0,
+    };
+  }
+
   updateAccount(e) {
     e.preventDefault();
+    console.log(this);
     this.props.updateAccountMutation({
       variables: {
         id: this.state.id,
@@ -25,6 +35,7 @@ class AccountList extends Component {
 
   deleteAccount(e) {
     e.preventDefault();
+    console.log(this);
     this.props.deleteAccountMutation({
       variables: {
         id: this.state.id,
@@ -34,7 +45,7 @@ class AccountList extends Component {
   }
 
   displayAccounts() {
-    var data = this.props.data;
+    var data = this.props.getAccountsQuery;
     if (data.loading) {
       return <div>Loading Accounts...</div>;
     } else {
@@ -47,11 +58,16 @@ class AccountList extends Component {
                   <div>Account Name: {account.name}</div>
                   <div>
                     Account Balance:
-                    <input placeholder={account.balance}></input>
-                    <button onClick={this.updateAccount.bind(this)}>
+                    <input
+                      onChange={(e) =>
+                        this.setState({ balance: e.target.value })
+                      }
+                      placeholder={account.balance}
+                    ></input>
+                    <button onClick={this.updateAccount}>
                       Update
                     </button>
-                    <button onClick={this.deleteAccount.bind(this)}>
+                    <button onClick={this.deleteAccount}>
                       Delete
                     </button>
                   </div>
@@ -70,4 +86,8 @@ class AccountList extends Component {
 
 // exports =====================================>
 
-export default graphql(getAccountsQuery)(AccountList);
+export default compose(
+  graphql(getAccountsQuery, { name: "getAccountsQuery" }),
+  graphql(updateAccountMutation, { name: "updateAccountMutation" }),
+  graphql(deleteAccountMutation, { name: "deleteAccountMutation" })
+)(AccountList);

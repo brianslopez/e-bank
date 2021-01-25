@@ -6,6 +6,7 @@ const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 // application =================================>
 
@@ -19,13 +20,13 @@ mongoose.connection.once("open", () => {
 app.use(cors());
 
 app.use(
-  "/graphql",
+  "/",
   graphqlHTTP({
     schema,
     graphiql: true,
   })
 );
 
-app.listen(3001, () => {
-  console.log("now listening for requests on port 3001");
+app.listen(PORT, () => {
+  console.log(`now listening for requests on port ${PORT}`);
 });

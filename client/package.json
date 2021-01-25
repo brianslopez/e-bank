@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.6.0",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.4.0",
+    "heroku": "^7.47.11",
+    "lodash.flowright": "^3.5.0",
     "react": "^17.0.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^17.0.1",
@@ -15,6 +17,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
+  },
+  "engines": {
+    "node": "12.18.4"
   },
   "scripts": {
     "start": "react-scripts start",
