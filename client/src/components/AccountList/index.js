@@ -9,7 +9,7 @@ function AccountList() {
   return (
     <section className="account-list">
       <div className="accounts-container">
-          { !loading && data.me.accounts && 
+          { !loading && data.me && 
               data.me.accounts.map(account => (
                 <article className="account">
                   <div className="account-img">

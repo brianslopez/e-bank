@@ -88,7 +88,7 @@ const Detail = () => {
   return (
       <div>
         <div className = "detail-header">
-            { !loading && data &&
+            { !loading && data.getAccount &&
                 <div className = "detail-info">
                     <h1 className = "detail-name">{data.getAccount.name}</h1>
                     <h3 className = "detail-balance">Balance: ${data.getAccount.balance}</h3>
